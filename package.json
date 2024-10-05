@@ -9,6 +9,12 @@
   "main": "dist/index.umd.min.js",
   "unpkg": "dist/index.iife.min.js",
   "jsdelivr": "dist/index.iife.min.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.umd.js"
+    }
+  },
   "keywords": [
     "vue",
     "vue-nestable",
@@ -25,7 +31,8 @@
     "fix": "eslint --ext .js,.vue . --fix",
     "prepublish": "npm run build",
     "postpublish": "npm run deploy-docs",
-    "pretest": "npm run lint"
+    "pretest": "npm run lint",
+    "prepare": "npm run build"
   },
   "browserslist": [
     "> 1%",
@@ -34,7 +41,8 @@
   ],
   "dependencies": {
     "immutability-helper": "^3.1.1",
-    "vue": "^2.6.12"
+    "vue": "^2.6.12",
+    "vue-runtime-helpers": "^0.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
